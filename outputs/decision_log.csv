@@ -1,0 +1,13 @@
+step,issue,rows_affected,decision
+2 Clean,sex had 5 spellings,9,standardised to female / male
+2 Clean,"CRP recorded as ""<0.3"" (below detection limit)",9,set to 0.15 mg/L (LOD/2); flag kept in crp_below_lod
+2 Clean,exact duplicate records,4,removed (copies of another row)
+2 Clean,"cholesterol in mmol/L at site C, 2023",46,converted to mg/dL (x 38.67) after confirming with the site
+2 Clean,diastolic >= systolic (likely swapped at entry),2,both values set to missing; source query raised
+2 Clean,height_cm = 17.2 (likely 172),1,set to missing; source query raised
+2 Clean,follow-up dated before baseline,1,date set to missing; visit kept
+2 Clean,unit of analysis,420,"baseline visit (visit 1), one row per patient"
+4 Outliers,SBP 212 mmHg (IQR flag),1,kept: plausible; sensitivity analysis shows little change
+5 Missing,"CRP 30% missing, more often in younger patients (MAR plausible)",130,multiple imputation with age in the imputation model; complete-case as sensitivity analysis
+5 Missing,HDL missing at site B in 2022 (lipid panel not run),43,treated as MAR given site and date
+7A Inference,confounding by age,420,primary estimate adjusted for age; BMI and sex in a secondary model

@@ -1,0 +1,18 @@
+variable,type,unit,coding_and_notes
+patient_id,identifier,,P0001 to P0420; never used as a model input
+visit,discrete,,1 = baseline; 2 = follow-up
+visit_date,date,,YYYY-MM-DD
+site,nominal,,"A, B, C"
+age,continuous,years,age at the visit
+sex,binary (nominal),,"female, male"
+height_cm,continuous,cm,measured at the visit
+weight_kg,continuous,kg,measured at the visit
+systolic_bp,continuous,mmHg,"seated, clinic measurement"
+diastolic_bp,continuous,mmHg,"seated, clinic measurement"
+cholesterol_total,continuous,mg/dL,fasting lipid panel
+hdl,continuous,mg/dL,fasting lipid panel
+crp,continuous,mg/L,"""<0.3"" = below the assay detection limit"
+smoking_status,nominal,,"never, former, current"
+diabetes,binary,,0 = no; 1 = yes
+statin,binary,,0 = no; 1 = yes
+ccs_class,ordinal,,angina class: 0 = none; 1 to 4 = CCS class I to IV
